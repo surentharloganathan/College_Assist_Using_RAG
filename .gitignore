@@ -1,3 +1,4 @@
+HEAD
 HELP.md
 target/
 .mvn/wrapper/maven-wrapper.jar
@@ -31,3 +32,56 @@ build/
 
 ### VS Code ###
 .vscode/
+
+﻿# Environment variables / secrets
+.env
+.env.*
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Chroma databases
+data/chroma_db/
+data/chroma_db_academic/
+data/chroma_db_structured/
+
+# Source documents
+data/*.pdf
+
+# Zip archives
+*.zip
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing / cache
+.pytest_cache/
+
+# Local model/cache files
+*.gguf
+
+# Temporary files
+*.tmp
+*.temp
+origin/main
