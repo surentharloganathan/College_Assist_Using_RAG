@@ -1,0 +1,460 @@
+
+/* ===== Global styles ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8faff;
+  color: #172554;
+}
+
+button {
+  font: inherit;
+}
+
+/* ===== App layout ===== */
+.app {
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.page-content {
+  width: calc(100% - 260px);
+  height: 100vh;
+  height: 100dvh;
+  margin-left: 260px;
+  padding: 32px;
+  overflow-y: auto;
+  background: #f8faff;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+  height: 100vh;
+  height: 100dvh;
+  padding: 12px;
+  overflow-y: auto;
+  background: #080b50;
+}
+
+.new-chat-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 13px;
+  border: 0;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.new-chat-btn:hover {
+  background: #1d4ed8;
+}
+
+.new-chat-btn span {
+  font-size: 20px;
+}
+
+.sidebar-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 24px;
+}
+
+.sidebar-heading {
+  margin: 0 0 7px;
+  padding: 0 10px;
+  color: #8290a5;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 10px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #a8b7d0;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.sidebar-item:hover {
+  background: #17245f;
+  color: white;
+}
+
+.sidebar-item.active {
+  background: #dce8ff;
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+.sidebar-icon {
+  width: 23px;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+/* ===== Developer profile and links ===== */
+.sidebar-bottom {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-top: auto;
+  padding: 12px 5px 5px;
+  border-top: 1px solid #26316d;
+}
+
+.profile-avatar {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #d7e6ff;
+  color: #1d4ed8;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.profile-details strong {
+  color: white;
+  font-size: 13px;
+}
+
+.profile-details span {
+  color: #b9c8e0;
+  font-size: 11px;
+}
+
+.sidebar-social-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.sidebar-social-links a {
+  color: #b9ceff;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.sidebar-social-links a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/* ===== Shared page styles ===== */
+.about-project-page,
+.how-it-works-page {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  color: #172554;
+}
+
+.about-project-header,
+.how-header {
+  margin-bottom: 32px;
+}
+
+.page-eyebrow,
+.how-eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #245bea;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+}
+
+.about-project-header h1,
+.how-header h1 {
+  margin: 0 0 14px;
+  color: #080b32;
+  font-size: 34px;
+}
+
+.about-project-header > p,
+.how-header > p {
+  max-width: 720px;
+  margin: 0;
+  color: #536580;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.project-intro,
+.feature-card,
+.workflow-banner,
+.workflow-step,
+.rag-explanation {
+  background: #edf2fb;
+  border: 1px solid #d8e2f2;
+  border-radius: 12px;
+}
+
+.project-intro,
+.workflow-banner {
+  margin-bottom: 36px;
+  padding: 24px;
+  border-left: 5px solid #2864ed;
+}
+
+.project-intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.project-intro h2,
+.project-section h2,
+.project-note h2,
+.workflow-banner h2,
+.workflow-section > h2,
+.rag-explanation > h2,
+.workflow-note h2 {
+  margin: 0 0 14px;
+  color: #080b32;
+  font-size: 22px;
+}
+
+.project-intro p,
+.feature-card p,
+.section-description,
+.project-note p,
+.workflow-banner p,
+.workflow-step p,
+.rag-explanation > p,
+.rag-item p,
+.workflow-note p {
+  margin: 0;
+  color: #536580;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* ===== About Project ===== */
+.intro-icon,
+.feature-icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: #dce7ff;
+  border-radius: 12px;
+}
+
+.project-section,
+.workflow-section,
+.rag-explanation {
+  margin-bottom: 36px;
+}
+
+.project-section > h2,
+.workflow-section > h2 {
+  margin-bottom: 20px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.feature-card {
+  padding: 24px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.feature-card:hover,
+.workflow-step:hover {
+  border-color: #2864ed;
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+}
+
+.feature-card h3,
+.step-content h3,
+.rag-item h3 {
+  margin: 0 0 10px;
+  color: #10285c;
+  font-size: 17px;
+}
+
+.technology-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.section-description {
+  margin-bottom: 18px;
+}
+
+.technology-tag,
+.step-technology {
+  display: inline-block;
+  padding: 8px 12px;
+  border: 1px solid #b9ceff;
+  border-radius: 7px;
+  background: #dce7ff;
+  color: #1747bd;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.project-note,
+.workflow-note {
+  padding: 26px;
+  border-radius: 12px;
+  background: #080b50;
+}
+
+.project-note h2,
+.workflow-note h2 {
+  color: white;
+}
+
+.project-note p,
+.workflow-note p {
+  color: #dce5ff;
+}
+
+/* ===== How It Works ===== */
+.workflow-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 22px;
+  transition: border-color 0.2s;
+}
+
+.step-number {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: #080b50;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.step-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.step-technology {
+  margin-top: 12px;
+}
+
+.rag-explanation {
+  padding: 26px;
+}
+
+.rag-explanation > p {
+  margin-bottom: 22px;
+}
+
+.rag-comparison {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.rag-item {
+  padding: 20px;
+  border: 1px solid #d8e2f2;
+  border-radius: 10px;
+  background: #f8faff;
+}
+
+.rag-item h3 {
+  font-size: 16px;
+}
+
+/* ===== Responsive layout ===== */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 220px;
+  }
+
+  .page-content {
+    width: calc(100% - 220px);
+    margin-left: 220px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-project-page,
+  .how-it-works-page {
+    padding: 16px;
+  }
+
+  .about-project-header h1,
+  .how-header h1 {
+    font-size: 28px;
+  }
+
+  .project-intro {
+    flex-direction: column;
+  }
+
+  .feature-grid,
+  .rag-comparison {
+    grid-template-columns: 1fr;
+  }
+
+  .workflow-step {
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .project-note,
+  .workflow-note,
+  .rag-explanation {
+    padding: 20px;
+  }
+}
