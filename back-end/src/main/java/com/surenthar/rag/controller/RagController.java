@@ -1,5 +1,5 @@
 package com.surenthar.rag.controller;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.surenthar.rag.dto.AnswerResponse;
 import com.surenthar.rag.dto.QuestionRequest;
@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins = "http://localhost:5173")
+
 public class RagController {
 
     private final  RagService ragService;

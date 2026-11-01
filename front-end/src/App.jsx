@@ -3,16 +3,21 @@ import { useState } from "react";
 import Sidebar from "./components/side_bar.jsx";
 import AboutProject from "./pages/about_project.jsx";
 import HowItWorks from "./pages/how_it_works.jsx";
-
+import ChatWindow  from "./components/chat_window.jsx";
 
 import "./App.css";
 
 function App() {
   const [activePage, setActivePage] = useState("chat");
+  const [chatResetKey, setChatResetKey] = useState(0);
+  
+
 
   function handleNewChat() {
-    setActivePage("chat");
-  }
+  setActivePage("chat");
+  setChatResetKey((previousKey) => previousKey + 1);
+}
+
 
   function handleNavigate(page) {
     setActivePage(page);
@@ -26,14 +31,11 @@ function App() {
       case "how-it-works":
         return <HowItWorks />;
 
-      case "about-me":
-        return <AboutMe />;
-
       case "contact":
         return <div>Contact information will be added here.</div>;
 
-      default:
-        return <div>Chat interface will be built in Phase 2.</div>;
+        default:
+          return <ChatWindow  resetKey = {chatResetKey}/>;
     }
   }
 
